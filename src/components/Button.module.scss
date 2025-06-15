@@ -1,0 +1,55 @@
+@use "../../styles/variables" as base;
+
+.button {
+	position: relative;
+	border: none;
+	border-radius: base.$radius-medium;
+	font-weight: 600;
+	transition: 0.2s ease;
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: base.$opacity-disabled;
+	}
+
+	&--primary {
+		background: base.$color-primary;
+		color: base.$color-white;
+
+		&:hover:not(:disabled) {
+			opacity: base.$opacity-hover;
+		}
+
+		&:active:not(:disabled) {
+			opacity: base.$opacity-active;
+		}
+	}
+
+	&--secondary {
+		background: base.$color-secondary;
+		color: base.$text-color;
+
+		&:hover:not(:disabled) {
+			opacity: base.$opacity-hover;
+		}
+
+		&:active:not(:disabled) {
+			opacity: base.$opacity-active;
+		}
+	}
+
+	&--small {
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+	}
+
+	&--medium {
+		padding: 0.75rem 1.5rem;
+		font-size: 1rem;
+	}
+
+	&--large {
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+	}
+}

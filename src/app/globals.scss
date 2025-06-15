@@ -1,0 +1,99 @@
+// Color palette
+$color-primary: #004edf;
+$color-secondary: #001131;
+$color-bg: #f1f1f1;
+$color-text: #333;
+$color-text-light: #fafafa;
+$color-white: #fff;
+
+// Spacing
+$spacing-small: 0.6rem;
+$spacing-medium: 1rem;
+$spacing-large: 1.4rem;
+
+// Border
+$radius-medium: 4px;
+
+// opacity
+$opacity-hover: 0.9;
+$opacity-active: 0.8;
+$opacity-disabled: 0.7;
+
+// Animation
+$transition-time: 0.2s;
+
+// ***** Normalize *****
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	outline: none;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+	outline: none;
+}
+
+button {
+	background: transparent;
+	border: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+}
+
+// ***** Base blocks *****
+body {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	height: max-content;
+	overflow-x: hidden;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer,
+header {
+	width: 100%;
+	padding: $spacing-small;
+	gap: $spacing-small;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+main {
+	flex: 1;
+	width: 100%;
+	padding: $spacing-medium;
+	gap: $spacing-medium;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// Common classes
+.pointer {
+	cursor: pointer;
+}

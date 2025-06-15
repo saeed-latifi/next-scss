@@ -1,0 +1,69 @@
+@use "../../styles/variables" as v;
+
+.header {
+	padding: 1rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+	&__content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__left,
+	&__right {
+		flex: 1;
+	}
+
+	&__right {
+		text-align: right;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 1.25rem;
+		text-align: center;
+		flex: 2;
+	}
+
+	&__button {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:active {
+			opacity: 0.6;
+		}
+	}
+
+	/* Variants */
+	&--light {
+		background-color: v.$white;
+		color: v.$text-color;
+
+		.header__button {
+			color: v.$primary-color;
+		}
+	}
+
+	&--dark {
+		background-color: darken(v.$text-color, 20%);
+		color: v.$white;
+
+		.header__button {
+			color: v.$white;
+		}
+	}
+}
