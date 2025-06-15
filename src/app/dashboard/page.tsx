@@ -1,12 +1,12 @@
 import { Footer } from "@/layout/Footer";
 import { Header } from "@/layout/Header";
-import Home from "./Home";
+import Dashboard from "./Dashboard";
 
-export default function HomePage() {
+export default function Home() {
 	return (
 		<>
 			<Header title="home" />
-			<Home />
+			<Dashboard />
 			<Footer />
 		</>
 	);

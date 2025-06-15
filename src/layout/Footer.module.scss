@@ -1,71 +1,26 @@
-@use "../../styles/variables" as v;
+@use "../styles/base.scss" as base;
 
 .footer {
-	padding: 2rem 1rem;
+	padding: base.$spacing-small base.$spacing-large;
 	transition: opacity 0.2s ease;
 	width: 100%;
+	border-top: solid 1px rgba(0, 0, 0, 0.2);
+	gap: base.$spacing-small;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0.4rem 0 0.4rem rgba(0, 0, 0, 0.2);
 
 	&__content {
+		flex: 1;
 		max-width: 1200px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: base.$spacing-medium;
 		align-items: center;
 		justify-content: space-between;
-
-		@media (min-width: 768px) {
-			flex-direction: row;
-		}
-	}
-
-	&__copyright {
-		margin: 0;
-		font-size: 0.875rem;
-	}
-
-	&__nav {
-		display: flex;
-	}
-
-	&__links {
-		display: flex;
-		gap: 1.5rem;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	&__link {
-		text-decoration: none;
-		font-size: 0.875rem;
-		transition: opacity 0.2s ease;
-
-		&:hover {
-			opacity: 0.8;
-		}
-
-		&:active {
-			opacity: 0.6;
-		}
-	}
-
-	/* Variants */
-	&--light {
-		background-color: v.$white;
-		color: v.$text-color;
-
-		.footer__link {
-			color: v.$primary-color;
-		}
-	}
-
-	&--dark {
-		background-color: darken(v.$text-color, 20%);
-		color: v.$white;
-
-		.footer__link {
-			color: v.$white;
-		}
+		font-weight: 900;
+		opacity: 0.4;
 	}
 }

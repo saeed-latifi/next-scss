@@ -1,33 +1,33 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import styles from "./Header.module.scss";
+import IconHome from "@/icons/IconHome";
+import IconBack from "@/icons/IconBack";
+import IconAccount from "@/icons/IconAccount";
 
 interface IHeaderProps extends React.HTMLAttributes<HTMLElement> {
 	title?: string;
-	showBackButton?: boolean;
 	variant?: "light" | "dark";
 }
 
-export function Header({ title = "Page Title", showBackButton = true, variant = "light", className = "", ...props }: IHeaderProps) {
-	const router = useRouter();
-	const headerClass = `${styles.header} ${styles[`header--${variant}`]} ${className}`;
+export function Header({ title = "Page Title", className = "", ...props }: IHeaderProps) {
+	const headerClass = `${styles.header}  ${className}`;
 
 	return (
 		<header className={headerClass} {...props}>
 			<div className={styles.header__content}>
-				<div className={styles.header__left}>
-					{showBackButton && (
-						<button onClick={() => router.back()} className={styles.header__button} aria-label="Go back">
-							← Back
-						</button>
-					)}
-				</div>
+				<Link href="/auth" className="clicker" aria-label="Go to home">
+					<IconAccount width="2rem" hanging="2rem" className="primary" />
+				</Link>
 
 				<h1 className={styles.header__title}>{title}</h1>
 
-				<div className={styles.header__right}>
-					<Link href="/" className={styles.header__button} aria-label="Go to home">
-						Home
+				<div className={styles.header__nav}>
+					<Link href="/" className="clicker" aria-label="Go to home">
+						<IconBack width="2rem" hanging="2rem" className="primary" />
+					</Link>
+
+					<Link href="/" className="clicker" aria-label="Go to home">
+						<IconHome width="2rem" hanging="2rem" className="primary" />
 					</Link>
 				</div>
 			</div>

@@ -13,7 +13,7 @@ export function Button({ variant = "primary", size = "medium", isLoading = false
 	const isDisabled = disabled || isLoading;
 
 	return (
-		<button className={`pointer ${styles.button} ${variantClass} ${sizeClass} ${loadingClass} ${className}`} disabled={isDisabled} aria-busy={isLoading} {...props}>
+		<button className={`clicker ${styles.button} ${variantClass} ${sizeClass} ${loadingClass} ${className}`} disabled={isDisabled} aria-busy={isLoading} {...props}>
 			{isLoading ? "Loading..." : children}
 		</button>
 	);

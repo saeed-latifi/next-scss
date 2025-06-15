@@ -1,11 +1,17 @@
-@use "../../styles/variables" as v;
+@use "../styles/base.scss" as base;
 
 .header {
-	padding: 1rem;
+	width: 100%;
+	padding: base.$spacing-small base.$spacing-large;
+	gap: base.$spacing-small;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 	position: sticky;
 	top: 0;
 	z-index: 100;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-bottom: solid 1px base.$color-primary;
 
 	&__content {
 		max-width: 1200px;
@@ -13,15 +19,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	&__left,
-	&__right {
-		flex: 1;
-	}
-
-	&__right {
-		text-align: right;
+		width: 100%;
 	}
 
 	&__title {
@@ -31,39 +29,10 @@
 		flex: 2;
 	}
 
-	&__button {
-		background: none;
-		border: none;
-		cursor: pointer;
-		font-size: 1rem;
-		padding: 0.5rem 1rem;
-		transition: opacity 0.2s ease;
-
-		&:hover {
-			opacity: 0.8;
-		}
-
-		&:active {
-			opacity: 0.6;
-		}
-	}
-
-	/* Variants */
-	&--light {
-		background-color: v.$white;
-		color: v.$text-color;
-
-		.header__button {
-			color: v.$primary-color;
-		}
-	}
-
-	&--dark {
-		background-color: darken(v.$text-color, 20%);
-		color: v.$white;
-
-		.header__button {
-			color: v.$white;
-		}
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: base.$spacing-medium;
 	}
 }

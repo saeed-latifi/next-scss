@@ -1,28 +1,9 @@
-// Color palette
-$color-primary: #004edf;
-$color-secondary: #001131;
-$color-bg: #f1f1f1;
-$color-text: #333;
-$color-text-light: #fafafa;
-$color-white: #fff;
+@use "./base.scss" as base;
 
-// Spacing
-$spacing-small: 0.6rem;
-$spacing-medium: 1rem;
-$spacing-large: 1.4rem;
-
-// Border
-$radius-medium: 4px;
-
-// opacity
-$opacity-hover: 0.9;
-$opacity-active: 0.8;
-$opacity-disabled: 0.7;
-
-// Animation
-$transition-time: 0.2s;
-
-// ***** Normalize *****
+:root {
+	fill: base.$color-text;
+	color: base.$color-text;
+}
 
 *,
 *::before,
@@ -63,6 +44,7 @@ img {
 
 // ***** Base blocks *****
 body {
+	background: base.$color-bg;
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
@@ -73,27 +55,32 @@ body {
 	align-items: center;
 }
 
-footer,
-header {
-	width: 100%;
-	padding: $spacing-small;
-	gap: $spacing-small;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
 main {
 	flex: 1;
 	width: 100%;
-	padding: $spacing-medium;
-	gap: $spacing-medium;
+	padding: base.$spacing-medium;
+	gap: base.$spacing-medium;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
 // Common classes
-.pointer {
+.clicker {
 	cursor: pointer;
+	&:hover {
+		opacity: base.$opacity-hover;
+	}
+
+	&:active {
+		opacity: base.$opacity-active;
+	}
+	&:disabled {
+		opacity: base.$opacity-disabled;
+	}
+}
+
+.primary {
+	fill: base.$color-primary;
+	color: base.$color-primary;
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.scss";
+import "../styles/globals.scss";
 
 export const metadata: Metadata = {
 	title: "Decamond sample",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en">
+		<html lang="fa">
 			<body>{children}</body>
 		</html>
 	);
