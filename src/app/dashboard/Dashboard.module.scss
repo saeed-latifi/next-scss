@@ -1,0 +1,19 @@
+@use "../../styles/base.scss" as base;
+
+.dashboard {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: base.$spacing-medium;
+	padding: base.$spacing-medium;
+
+	&__text {
+		border-bottom: base.$color-secondary;
+		padding-bottom: base.$spacing-medium;
+		color: base.$color-secondary;
+		font-size: x-large;
+	}
+}

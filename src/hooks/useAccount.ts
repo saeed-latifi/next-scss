@@ -125,6 +125,7 @@ export default function useAccount() {
 				router.push("/dashboard");
 			} else throw new Error("bad call");
 		} catch (error) {
+			console.log(error);
 			alert("bad request please try again");
 		} finally {
 			onActionLoading(false);

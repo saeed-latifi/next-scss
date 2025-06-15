@@ -20,7 +20,10 @@ export default function Account() {
 			</div>
 		);
 
-	if (account) router.push("/dashboard");
+	if (account) {
+		router.push("/dashboard");
+		return <></>;
+	}
 
 	return (
 		<form
@@ -28,7 +31,7 @@ export default function Account() {
 				e.preventDefault();
 				onLogin(number);
 			}}
-			className={styles.container}
+			className={styles.account}
 		>
 			<Button isLoading={actionLoading}>login</Button>
 			<Input value={number} onChange={(e) => setNumber(e.target.value)} placeholder="09** *** ****" />

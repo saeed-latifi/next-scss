@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./Header.module.scss";
 import IconHome from "@/icons/IconHome";
-import IconBack from "@/icons/IconBack";
 import IconAccount from "@/icons/IconAccount";
+import { Back } from "@/components/Back";
 
 interface IHeaderProps extends React.HTMLAttributes<HTMLElement> {
 	title?: string;
@@ -22,9 +22,7 @@ export function Header({ title = "Page Title", className = "", ...props }: IHead
 				<h1 className={styles.header__title}>{title}</h1>
 
 				<div className={styles.header__nav}>
-					<Link href="/" className="clicker" aria-label="Go to home">
-						<IconBack width="2rem" hanging="2rem" className="primary" />
-					</Link>
+					<Back />
 
 					<Link href="/" className="clicker" aria-label="Go to home">
 						<IconHome width="2rem" hanging="2rem" className="primary" />
